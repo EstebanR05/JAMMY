@@ -10,7 +10,7 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #272829;
+  color: #FFFFFF;
 }
 
 a {
@@ -189,7 +189,7 @@ h6 {
 .nav-menu .active i,
 .nav-menu .active:focus i,
 .nav-menu li:hover>a i {
-  color: #149ddd;
+  color: #6FCF97;
 }
 
 /* Mobile Navigation */
@@ -312,7 +312,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #173b6c;
+  color: #FFFFFF;
 }
 
 .section-title h2::after {
@@ -336,7 +336,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  color: #173b6c;
+  color: #FFFFFF;
 }
 
 .about .content ul {
@@ -546,7 +546,7 @@ section {
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-  color: #149ddd;
+  color: #6FCF97;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -694,10 +694,10 @@ section {
   justify-content: center;
   width: 54px;
   height: 54px;
-  background: #149ddd;
+  background: #6FCF97;
   border-radius: 50%;
   transition: 0.5s;
-  border: 1px solid #149ddd;
+  border: 1px solid #6FCF97;
 }
 
 .services .icon i {
@@ -711,7 +711,7 @@ section {
 }
 
 .services .icon-box:hover .icon i {
-  color: #149ddd;
+  color: #6FCF97;
 }
 
 .services .title {
@@ -722,11 +722,11 @@ section {
 }
 
 .services .title a {
-  color: #343a40;
+  color: #FFFFFF;
 }
 
 .services .title a:hover {
-  color: #149ddd;
+  color: #6FCF97;
 }
 
 .services .description {
@@ -820,11 +820,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #149ddd;
+  border: 1px solid #6FCF97;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #149ddd;
+  background-color: #6FCF97;
 }
 
 /*--------------------------------------------------------------
@@ -843,7 +843,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #149ddd;
+  color: #6FCF97;
   float: left;
   width: 44px;
   height: 44px;
@@ -894,14 +894,14 @@ section {
 }
 
 .contact .info .social-links a:hover {
-  background: #149ddd;
+  background: #6FCF97;
   color: #fff;
 }
 
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: #149ddd;
+  background: #6FCF97;
   color: #fff;
 }
 
@@ -1101,4 +1101,47 @@ section {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+.bg-principal {
+  background-color: #1D1D42 !important;
+}
+
+.color-texto {
+  color: #FFFFFF !important;
+}
+
+.bg-iconos {
+ color: #6FCF97 !important; 
+}
+.bg-iconos-2 {
+  color: #FFFFFF;
+}
+
+.botones {
+  background-color: #4E2ECF !important;
+}
+
+.icono-especial {
+  fill: #4E2ECF;
+}
+
+.bhover:hover {
+  color: #4E2ECF !important; 
+}
+
+.green {
+  background-color: #6FCF97 !important;
+}
+
+.paginabg {
+    background-color: #091D42 !important;
+}
+
+.titulo {
+  font-family: monospace;
+}
+
+.monospace {
+  font-family: monospace;
 }
