@@ -8,11 +8,11 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(255) NOT NULL,
   `correo` varchar(255) NOT NULL,
   `apellido` varchar(255) NOT NULL,
-  `contraseña` varchar(255) NOT NULL
+  `contrasena` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `apellido`, `contraseña`) VALUES
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `apellido`, `contrasena`) VALUES
 (1, 'Steiner', 'pruebadesteiner@gmail.com', 'Herrera', 'mosquera');
 
 
