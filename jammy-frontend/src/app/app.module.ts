@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ComponentsModule } from './components/components.module';
 import { PlatformModule } from './platform/platform.module';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,9 +16,9 @@ import { PlatformModule } from './platform/platform.module';
     BrowserModule,
     AppRoutingModule,
     PlatformModule,
-    ComponentsModule
+    ComponentsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

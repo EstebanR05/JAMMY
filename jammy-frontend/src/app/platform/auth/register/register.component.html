@@ -1,4 +1,4 @@
-<div style="background-color: #27275f !important;">
+<div class="pt-2" style="background-color: #27275f !important;">
     <div class="container pb-4">
     <div class="card mt-3 paginabg">
       <div class="card-body">
@@ -9,62 +9,39 @@
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
                   class="img-fluid" alt="Sample image">
               </div>
-              <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+              <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
                 <legend class="text-white titulo">
                   <a href="http://www.jquery2dotnet.com">
                     <i class="glyphicon glyphicon-globe"></i>
                   </a> Sign up!
                 </legend>
-                <form action="#" method="post" class="form" role="form">
+                <form class="form" role="form" [formGroup]="formUsuarios" (submit)="sendDatos()">
                   <div class="row">
                     <div class="col-xs-6 col-md-6">
-                      <input class="form-control mt-2" name="firstname" placeholder="First Name" type="text" required
+                      <input class="form-control mt-2" name="firstname" formControlName="nombre" placeholder="First Name" type="text"
                         autofocus />
                     </div>
                     <div class="col-xs-6 col-md-6">
-                      <input class="form-control mt-2" name="lastname" placeholder="Last Name" type="text" required />
+                      <input class="form-control mt-2" name="lastname" formControlName="apellido" placeholder="Last Name" type="text"/>
                     </div>
                   </div>
-                  <input class="form-control mt-2" name="youremail" placeholder="Your Email" type="email" />
-                  <input class="form-control mt-2" name="reenteremail" placeholder="Re-enter Email" type="email" />
-                  <input class="form-control mt-2" name="password" placeholder="New Password" type="password" />
-                  <label class="mt-2 text-white">Birth Date</label>
-                  <div class="row">
-                    <div class="col-xs-4 col-md-4 mt-2">
-                      <select class="form-control">
-                        <option value="Month">Month</option>
-                      </select>
-                    </div>
-                    <div class="col-xs-4 col-md-4 mt-2">
-                      <select class="form-control">
-                        <option value="Day">Day</option>
-                      </select>
-                    </div>
-                    <div class="col-xs-4 col-md-4 mt-2">
-                      <select class="form-control">
-                        <option value="Year">Year</option>
-                      </select>
+                  <input class="form-control mt-2" name="youremail" formControlName="correo" placeholder="Your Email" type="email"/>
+                  <input class="form-control mt-2" name="password" formControlName="contrasena" placeholder="New Password" type="password" />
+                
+
+                  <div class="text-center text-lg-start mt-4 pt-2">
+                    <button type="submit" [disabled]="formUsuarios.invalid" class="btn btn-primary btn-lg"
+                      style="padding-left: 2.5rem; padding-right: 2.5rem;">Sing up</button>
+                      <p class="small fw-bold text-white mt-2 pt-1 mb-0">
+                      You have an account?
+                      <a href="/platform/login/index.html" class="link-danger">Login</a>
+                    </p>
+                    <br>
+                    <div class="text-white">
+                      Valido: {{formUsuarios.valid | json }}
                     </div>
                   </div>
-                  <label class="radio-inline mt-2 text-white ">
-                    <input type="radio" name="sex" id="inlineCheckbox1" value="male" />
-                    Male
-                  </label>
-                  <label class="radio-inline mt-2 ml-2 text-white">
-                    <input type="radio" name="sex" id="inlineCheckbox2" value="female" />
-                    Female
-                  </label>
                 </form>
-
-                <div class="text-center text-lg-start mt-4 pt-2">
-                  <button type="button" class="btn btn-primary btn-lg"
-                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Sing up</button>
-                  <p class="small fw-bold text-white mt-2 pt-1 mb-0">
-                    You have an account?
-                    <a href="/platform/login/index.html" class="link-danger">Login</a>
-                  </p>
-                </div>
-
               </div>
             </div>
           </div>

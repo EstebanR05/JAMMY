@@ -35,10 +35,10 @@ if(isset($_GET["insertar"])){
     $nombre=$data->nombre;
     $apellido=$data->apellido;
     $correo=$data->correo;
-    $contrasena=$data->contraseña;
+    $contrasena=$data->contrasena;
         if(($correo!="")&&($nombre!="")&&($apellido!="")&&($contrasena!="")){
             
-    $sqlEmpleaados = mysqli_query($conexionBD,"INSERT INTO usuarios(nombre,correo,apellido,contraseña) VALUES('$nombre','$correo','$apellido','$contrasena') ");
+    $sqlEmpleaados = mysqli_query($conexionBD,"INSERT INTO usuarios(nombre,correo,apellido,contrasena) VALUES('$nombre','$correo','$apellido','$contrasena') ");
     echo json_encode(["success"=>1]);
         }
     exit();
@@ -54,7 +54,7 @@ if(isset($_GET["actualizar"])){
     $correo=$data->correo;
     $contrasena=$data->contraseña;
     
-    $sqlEmpleaados = mysqli_query($conexionBD,"UPDATE usuarios SET nombre='$nombre',correo='$correo', apellido='$apellido', contraseña='$contrasena' WHERE id='$id'");
+    $sqlEmpleaados = mysqli_query($conexionBD,"UPDATE usuarios SET nombre='$nombre',correo='$correo', apellido='$apellido', contrasena='$contrasena' WHERE id='$id'");
     echo json_encode(["success"=>1]);
     exit();
 }
