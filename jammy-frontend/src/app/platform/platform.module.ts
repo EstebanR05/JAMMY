@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -13,7 +15,15 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  exports:[
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ]
 })
 export class PlatformModule { }
