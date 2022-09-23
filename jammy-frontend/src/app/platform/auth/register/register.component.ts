@@ -9,32 +9,23 @@ import { RegisterService } from 'src/app/shared/services/register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  formUsuarios: FormGroup;
-  constructor(public form: FormBuilder, private CrudService: RegisterService) { 
-    this.formUsuarios = this.form.group({
-      nombre: ['', [
-        Validators.required,
-        Validators.maxLength(15)
-      ]],
-      correo: ['', [
-        Validators.required,
-        Validators.email
-      ]],
-      apellido: ['', [
-        Validators.required,
-        Validators.maxLength(15)
-      ]],
-      contrasena: ['' , [
-        Validators.required,
-        Validators.minLength(6)
-      ]]
-    })
-  }
+  formUsuarios!: FormGroup;
+
+  constructor(
+    public form: FormBuilder,
+    private CrudService: RegisterService
+  ) { }
 
   ngOnInit(): void {
+    this.formUsuarios = this.form.group({
+      nombre: ['', [Validators.required, Validators.maxLength(15)]],
+      correo: ['', [Validators.required, Validators.email]],
+      apellido: ['', [Validators.required, Validators.maxLength(15)]],
+      contrasena: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
-  sendDatos():any {
+  sendDatos(): any {
     this.CrudService.AgregarUsuario(this.formUsuarios.value);
   }
 }
