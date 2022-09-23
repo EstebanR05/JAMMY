@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { APIJammy } from 'src/app/shared/interfaces/api.interface';
 import { RegisterService } from 'src/app/shared/services/register.service';
 
 @Component({
@@ -27,5 +28,8 @@ export class RegisterComponent implements OnInit {
 
   sendDatos(): any {
     this.CrudService.AgregarUsuario(this.formUsuarios.value);
+  }
+  submit():any{
+    
   }
 }
