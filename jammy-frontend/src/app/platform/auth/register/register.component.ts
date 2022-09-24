@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { APIJammy } from 'src/app/shared/interfaces/api.interface';
 import { RegisterService } from 'src/app/shared/services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',

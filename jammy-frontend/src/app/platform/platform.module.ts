@@ -5,6 +5,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { PlaformRoutingModule } from './plaform-routing.module';
 
 
 
@@ -18,12 +19,8 @@ import { HttpClientModule } from '@angular/common/http'
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PlaformRoutingModule
   ],
-  exports:[
-    LoginComponent,
-    RegisterComponent,
-    ProfileComponent
-  ]
 })
 export class PlatformModule { }
