@@ -11,7 +11,9 @@ export class LoginService {
    }
 
 
-   VerificarUsuario(correo:any) {
-    return this.HttpUsuarios.get(this.API + "?correo=" + correo);
+   VerificarUsuario(correo:string) {
+    return this.HttpUsuarios.get(this.API + "?consultar=" + correo).subscribe((resp) => {
+      console.log(resp);
+    })
    }
 }
