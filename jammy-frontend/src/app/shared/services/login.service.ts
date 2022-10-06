@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { LoginInterface } from '../interfaces/login.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +13,7 @@ export class LoginService {
    }
 
 
-   VerificarUsuario(correo:string) {
-    return this.HttpUsuarios.get(this.API + "?consultar=" + correo).subscribe((resp) => {
-      console.log(resp);
-    })
+   VerificarUsuario(datos: LoginInterface):Observable<any> {
+    return this.HttpUsuarios.get(this.API + "?consultar=" + datos)
    }
 }

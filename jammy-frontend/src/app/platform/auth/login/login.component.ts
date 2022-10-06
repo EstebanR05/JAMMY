@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    this.servicio.VerificarUsuario(this.formUsuario.value)
+    this.servicio.VerificarUsuario(this.formUsuario.value).subscribe((resp) => {
+      console.log(resp);
+    })
   }
 
 }
