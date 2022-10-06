@@ -8,15 +8,14 @@ import { APIJammy } from '../interfaces/api.interface';
 })
 export class RegisterService {
 
-  ApiUrl: string = 'http://localhost/usuarios/api.php';
+  ApiUrl: string = 'http://localhost/usuarios/';
 
   constructor(
-    private _HttpUsuarios: HttpClient
+    private HttpUsuarios: HttpClient
   ) { }
 
-  AgregarUsuario(datos: string): Observable<APIJammy[]> {
-    const url = `${ this.ApiUrl }/usuarios/${ datos }`;
-    return this._HttpUsuarios.get<APIJammy[]>(url);
+  AgregarUsuario(datos: APIJammy):Observable<any> {
+    return this.HttpUsuarios.post(this.ApiUrl + '?insertar=1', datos);
   }
 
 }

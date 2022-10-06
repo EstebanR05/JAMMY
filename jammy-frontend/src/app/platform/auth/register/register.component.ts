@@ -15,7 +15,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     public form: FormBuilder,
-    private CrudService: RegisterService
+    private CrudService: RegisterService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,10 +28,9 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  sendDatos(): any {
-    this.CrudService.AgregarUsuario(this.formUsuarios.value);
-  }
   submit():any{
-    
+    this.CrudService.AgregarUsuario(this.formUsuarios.value).subscribe(() => {
+      this.router.navigateByUrl('auth/login');
+    })
   }
 }
