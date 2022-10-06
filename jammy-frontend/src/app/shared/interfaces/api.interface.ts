@@ -3,5 +3,5 @@ export interface APIJammy {
     nombre:     string;
     correo:     string;
     apellido:   string;
-    contraseña: string;
+    contrasena: string;
 }
