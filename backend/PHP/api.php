@@ -67,4 +67,18 @@ if(mysqli_num_rows($sqlEmpleaados) > 0){
 else{ echo json_encode([["success"=>0]]); }
 
 
+// consulta correo
+
+// Consulta datos y recepciona una clave para consultar dichos datos con dicha clave
+if (isset($_GET["correo"] && $_GET["contrasena"])){
+    $sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM usuarios WHERE correo=".$_GET["correo"]."AND WHERE contrasena=".$_GET["contrasena"]);
+    if(mysqli_num_rows($sqlEmpleaados) > 0){
+        $empleaados = mysqli_fetch_all($sqlEmpleaados,MYSQLI_ASSOC);
+        echo json_encode($empleaados);
+        exit();
+    }
+    else{  echo json_encode(["success"=>0]); }
+}
+
+
 ?>
