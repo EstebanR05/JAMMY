@@ -14,9 +14,12 @@ export class LoginService {
 
    }
 
+   get isCreated():boolean {
+    return !!this.VerificarUsuario
+   }
+
 
    VerificarUsuario(datosUser: LoginInterface):Observable<any> {
-    
     return this.HttpUsuarios.post<LoginInterface>(`${this.ApiUrl}?consultar=1`, datosUser);
    }
 }
