@@ -22,7 +22,7 @@
                   class="img-fluid" alt="Sample image">
               </div>
               <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form (submit)="submit()" [formGroup]="formUsuario">
+                <form (submit)="submit()" [formGroup]="formUsuario" #ngForm="ngForm" role="formUsuario" >
                   <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start mt-3">
                     <p class="lead fw-normal mb-0 me-3 color-texto">Inicia sesión con</p>
                     <a class="btn btn-secondary btn-social mx-2 green" href="#!" aria-label="Twitter"><i
