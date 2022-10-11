@@ -12,7 +12,10 @@ $conexionBD = new mysqli($servidor, $usuario, $contrasenia, $nombreBaseDatos);
 
 // Consulta datos y recepciona una clave para consultar dichos datos con dicha clave
 if (isset($_GET["consultar"])){
-    $sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM usuarios WHERE id=".$_GET["consultar"]);
+    $data = json_decode(file_get_contents("php://input"));
+    $correo = $data->correo;
+    $contrasena = $data->contrasena;
+    $sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM usuarios WHERE correo='$correo' AND contrasena='$contrasena'");
     if(mysqli_num_rows($sqlEmpleaados) > 0){
         $empleaados = mysqli_fetch_all($sqlEmpleaados,MYSQLI_ASSOC);
         echo json_encode($empleaados);
@@ -36,7 +39,7 @@ if(isset($_GET["insertar"])){
     $apellido=$data->apellido;
     $correo=$data->correo;
     $contrasena=$data->contrasena;
-        if(($correo!="")&&($nombre!="")&&($apellido!="")&&($contrasena!="")){
+        if(($correo!="")&&($nombre!="")){
             
     $sqlEmpleaados = mysqli_query($conexionBD,"INSERT INTO usuarios(nombre,correo,apellido,contrasena) VALUES('$nombre','$correo','$apellido','$contrasena') ");
     echo json_encode(["success"=>1]);
@@ -52,9 +55,9 @@ if(isset($_GET["actualizar"])){
     $nombre=$data->nombre;
     $apellido=$data->apellido;
     $correo=$data->correo;
-    $contrasena=$data->contraseña;
+    $contrasena=$data->contrasena;
     
-    $sqlEmpleaados = mysqli_query($conexionBD,"UPDATE usuarios SET nombre='$nombre',correo='$correo', apellido='$apellido', contrasena='$contrasena' WHERE id='$id'");
+    $sqlEmpleaados = mysqli_query($conexionBD,"UPDATE usuarios SET nombre='$nombre',correo='$correo', apellido='$apellido', contraseña='$contrasena' WHERE id='$id'");
     echo json_encode(["success"=>1]);
     exit();
 }
@@ -66,19 +69,6 @@ if(mysqli_num_rows($sqlEmpleaados) > 0){
 }
 else{ echo json_encode([["success"=>0]]); }
 
-
-// consulta correo
-
-// Consulta datos y recepciona una clave para consultar dichos datos con dicha clave
-if (isset($_GET["correo"] && $_GET["contrasena"])){
-    $sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM usuarios WHERE correo=".$_GET["correo"]."AND WHERE contrasena=".$_GET["contrasena"]);
-    if(mysqli_num_rows($sqlEmpleaados) > 0){
-        $empleaados = mysqli_fetch_all($sqlEmpleaados,MYSQLI_ASSOC);
-        echo json_encode($empleaados);
-        exit();
-    }
-    else{  echo json_encode(["success"=>0]); }
-}
 
 
 ?>
