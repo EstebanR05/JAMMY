@@ -9,6 +9,8 @@ import { ProfileListComponent } from './profile/profile-list/profile-list.compon
 import { ProfileHomeComponent } from './profile/components/profile-home/profile-home.component';
 import { ProfileHomeworkComponent } from './profile/components/profile-homework/profile-homework.component';
 import { ProfileScheduleComponent } from './profile/components/profile-schedule/profile-schedule.component';
+import { ProfileSidebarComponent } from './profile/profile-sidebar/profile-sidebar.component';
+import { ProfileSectionComponent } from './profile/profile-section/profile-section.component';
 
 
 
@@ -19,7 +21,9 @@ import { ProfileScheduleComponent } from './profile/components/profile-schedule/
     ProfileListComponent,
     ProfileHomeComponent,
     ProfileHomeworkComponent,
-    ProfileScheduleComponent
+    ProfileScheduleComponent,
+    ProfileSidebarComponent,
+    ProfileSectionComponent
   ],
   imports: [
     CommonModule,
