@@ -1,9 +1,33 @@
 <div class="d-flex bg-principal">
-  
+
   <!--aside-->
-  <app-profile-sidebar></app-profile-sidebar>
+  <div class="border-right p-2" id="sidebar">
+    <h3 class="text-light p-2 text-center">
+      Perfil de Steiner
+    </h3>
+
+    <hr class="text-white" />
+
+    <li class="text-center">
+      <br>
+      <a class="btn text-white w-50 mt-3" style="background-color: #091D42;">Inicio</a>
+      <br>
+      <a class="btn text-white w-50 mt-3" style="background-color: #091D42;">Agregar tareas</a>
+      <br>
+      <a class="btn text-white w-50 mt-3" style="background-color: #091D42;">Tabla De Tareas</a>
+    </li>
+
+  </div>
 
   <!--section-->
-  <app-profile-section class="container p-0"></app-profile-section>
+  <div class="container p-0">
+    <div class="p-4" id="colorPrincipl"></div>
+    <div class="p-3" id="colorPrincipl">
+      <app-profile-home></app-profile-home>
+    </div>
+    <div class="p-4" id="colorPrincipl">
+      <div class="h6 text-white">creado para el colegio manuel maria mallarino @copyright</div>
+    </div>
+  </div>
 
 </div>
