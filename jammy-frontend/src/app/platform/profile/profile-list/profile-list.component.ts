@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-profile-list',
@@ -6,33 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-list.component.scss']
 })
 export class ProfileListComponent implements OnInit {
+  public datos: any;
 
-  select1: boolean = true;
-  select2: boolean = false;
-  select3: boolean = false;
-
-
-  constructor() { }
+  constructor(
+    public _userSerice: UserService,
+  ) { }
 
   ngOnInit(): void {
-  }
-
-  home(){
-    this.select1 = true;
-    this.select2 = false;
-    this.select3 = false;
-  }
-
-  homeWork(){
-    this.select1 = false;
-    this.select2 = true;
-    this.select3 = false;
-  }
-
-  table(){
-    this.select1 = false;
-    this.select2 = false;
-    this.select3 = true;
+    this._userSerice.getAll().subscribe(res => {
+      console.log(res)
+    })
   }
 
 }

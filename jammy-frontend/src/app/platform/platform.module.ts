@@ -6,11 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { PlaformRoutingModule } from './plaform-routing.module';
 import { ProfileListComponent } from './profile/profile-list/profile-list.component';
-import { ProfileHomeComponent } from './profile/components/profile-home/profile-home.component';
-import { ProfileHomeworkComponent } from './profile/components/profile-homework/profile-homework.component';
-import { ProfileTableComponent } from './profile/components/profile-table/profile-table.component';
-
-
+import { ProfileHomeComponent } from './profile/profile-home/profile-home.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +14,6 @@ import { ProfileTableComponent } from './profile/components/profile-table/profil
     RegisterComponent,
     ProfileListComponent,
     ProfileHomeComponent,
-    ProfileHomeworkComponent,
-    ProfileTableComponent
   ],
   imports: [
     CommonModule,

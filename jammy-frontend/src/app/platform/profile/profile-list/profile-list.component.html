@@ -2,30 +2,32 @@
 
   <!--aside-->
   <div class="border-right p-2" id="sidebar">
-    <h3 class="text-light p-2 text-center">
+    <img src="" width="200px" height="200px">
+    <h3 class="text-light p-2 text-center mt-2">
       Perfil de Steiner
     </h3>
 
     <hr class="text-white" />
 
-    <li class="text-center">
-      <br>
-      <a class="btn text-white w-50 mt-3" style="background-color: #091D42;" (click)="home()">Inicio</a>
-      <br>
-      <a class="btn text-white w-50 mt-3" style="background-color: #091D42;" (click)="homeWork()">Agregar tareas</a>
-      <br>
-      <a class="btn text-white w-50 mt-3" style="background-color: #091D42;" (click)="table()">Tabla De Tareas</a>
-    </li>
+    <br>
+    <div class="mt-2 text-center text-white">Name: steiner</div>
+    <div class="mt-2 text-center text-white">Edad: 15</div>
+    <div class="mt-2 text-center text-white">Colegio: I.E.M.M.M</div>
+    <div class="mt-2 text-center text-white">Telefono: 302473388</div>
+    <div class="mt-2 text-center text-white">Correo: steinerjuegos@gmail.com</div>
 
   </div>
 
   <!--section-->
   <div class="container p-0" id="colorPrincipl">
-    <div class="p-4" id="colorPrincipl"></div>
-    <div class="p-3" id="colorPrincipl">
-      <app-profile-home *ngIf="select1"></app-profile-home>
-      <app-profile-homework *ngIf="select2"></app-profile-homework>
-      <app-profile-table *ngIf="select3"></app-profile-table>
+    <div class="p-2" id="colorHeader">
+      <div class="mt-2 text-end">
+        <img src="" width="40px" height="40px">
+        <div class="text-white">steiner</div>
+      </div>
+    </div>
+    <div class="p-5" id="colorPrincipl">
+      <app-profile-home></app-profile-home>
     </div>
     <div class="p-4" id="colorPrincipl">
       <div class="h6 text-white">creado para el colegio manuel maria mallarino @copyright</div>
