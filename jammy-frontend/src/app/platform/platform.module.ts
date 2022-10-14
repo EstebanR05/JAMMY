@@ -8,8 +8,6 @@ import { PlaformRoutingModule } from './plaform-routing.module';
 import { ProfileListComponent } from './profile/profile-list/profile-list.component';
 import { ProfileHomeComponent } from './profile/components/profile-home/profile-home.component';
 import { ProfileHomeworkComponent } from './profile/components/profile-homework/profile-homework.component';
-import { ProfileSidebarComponent } from './profile/profile-sidebar/profile-sidebar.component';
-import { ProfileSectionComponent } from './profile/profile-section/profile-section.component';
 import { ProfileTableComponent } from './profile/components/profile-table/profile-table.component';
 
 
@@ -21,8 +19,6 @@ import { ProfileTableComponent } from './profile/components/profile-table/profil
     ProfileListComponent,
     ProfileHomeComponent,
     ProfileHomeworkComponent,
-    ProfileSidebarComponent,
-    ProfileSectionComponent,
     ProfileTableComponent
   ],
   imports: [
