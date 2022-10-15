@@ -8,7 +8,7 @@ import { APIJammy } from "../interfaces/APIJammy";
 })
 export class RegisterService {
 
-  ApiUrl: string = 'http://localhost/usuarios/';
+  ApiUrl: string = 'http://localhost/usuarios/api.php';
 
   constructor(
     private HttpUsuarios: HttpClient

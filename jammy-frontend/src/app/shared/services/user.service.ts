@@ -16,7 +16,7 @@ export class UserService {
     private HttpUsuarios: HttpClient
   ) { }
 
-  getAll(datos?: APIJammy):Observable<any> {
+  getAll():Observable<any> {
     return this.HttpUsuarios.get<APIJammy>(this.ApiUrl);
   }
 }
