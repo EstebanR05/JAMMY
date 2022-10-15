@@ -6,14 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { PlaformRoutingModule } from './plaform-routing.module';
 import { ProfileListComponent } from './profile/profile-list/profile-list.component';
-import { ProfileHomeComponent } from './profile/profile-home/profile-home.component';
+import { ProfileCardComponent } from './profile/profile-card/profile-card.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     ProfileListComponent,
-    ProfileHomeComponent,
+    ProfileCardComponent,
   ],
   imports: [
     CommonModule,

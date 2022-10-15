@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/shared/services/user.service';
+import { map, Observable, switchMap, tap } from 'rxjs';
+import { APIJammy } from 'src/app/shared/interfaces/APIJammy';
+import { UserService, UserServiceActionTap } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-profile-list',
@@ -7,16 +9,19 @@ import { UserService } from 'src/app/shared/services/user.service';
   styleUrls: ['./profile-list.component.scss']
 })
 export class ProfileListComponent implements OnInit {
-  public datos: any;
+
+  data: any;
 
   constructor(
     public _userSerice: UserService,
   ) { }
 
   ngOnInit(): void {
+    //aqui traigo los datos del servicio y lo almaceno en la variable datos
     this._userSerice.getAll().subscribe(res => {
-      console.log(res)
+       this.data = res[0];
     })
+    console.log(this.data)
   }
 
 }
