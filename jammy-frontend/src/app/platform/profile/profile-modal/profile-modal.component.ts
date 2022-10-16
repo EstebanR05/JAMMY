@@ -13,8 +13,7 @@ export class ProfileModalComponent implements OnInit {
   form!: FormGroup;
 
   @Input() modal: any;
-  @Output() closeModal: EventEmitter<any> = new EventEmitter();
-
+  
   constructor(
     private _form: FormBuilder,
     private _data: UserService
