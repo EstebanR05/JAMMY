@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { PlaformRoutingModule } from './plaform-routing.module';
 import { ProfileListComponent } from './profile/profile-list/profile-list.component';
 import { ProfileCardComponent } from './profile/profile-card/profile-card.component';
+import { ProfileModalComponent } from './profile/profile-modal/profile-modal.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ProfileCardComponent } from './profile/profile-card/profile-card.compon
     RegisterComponent,
     ProfileListComponent,
     ProfileCardComponent,
+    ProfileModalComponent,
   ],
   imports: [
     CommonModule,

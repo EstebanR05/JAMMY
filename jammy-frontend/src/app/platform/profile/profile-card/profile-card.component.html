@@ -1,11 +1,55 @@
 <div class="card">
-    <div class="card-header">
-      <div class="d-flex justify-content-between">
-          <strong class="aling-self-center">Informacion</strong>
-      </div>
-  </div>
-    <div class="card-body">
-      
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <strong class="aling-self-center">Informacion</strong>
     </div>
   </div>
-  
+  <div class="card-body">
+      <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th>Nombre de tarea</th>
+            <th>informacion de tarea</th>
+            <th>Hora a iniciar</th>
+            <th>Hora de entrega</th>
+            <th></th>
+          <tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <button class="btn btn-secondary btn-sm">Editar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-body">
+    <div class="d-grid gap-2">
+      <button class="btn btn-secondary" (click)="openModal($event)">Agregar nueva tarea</button>
+    </div>
+  </div>
+</div>
+
+<!--modal level-->
+<ng-container *ngIf="modalDisplay$ | async as modalDisplay;">
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':modalDisplay}">
+      <div class="modal-dialog modal-lg modal-sm" role="document">
+          <div class="modal-content">
+              <div class="modal-body p-0">
+                  <app-profile-modal *ngIf="selected$ | async as selected;"
+                      (closeLevel)="closeModal()" (clickOutside)="closeModal()">
+                      <!-- [modal]="selected" -->
+                  </app-profile-modal>
+              </div>
+          </div>
+      </div>
+  </div>
+</ng-container>
