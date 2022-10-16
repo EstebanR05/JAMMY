@@ -13,10 +13,10 @@ export class ProfileModalComponent implements OnInit {
   form!: FormGroup;
 
   @Input() modal: any;
-  
+
   constructor(
     private _form: FormBuilder,
-    private _data: UserService
+    private _UserService: UserService
   ) { }
 
   ngOnInit(): void {
