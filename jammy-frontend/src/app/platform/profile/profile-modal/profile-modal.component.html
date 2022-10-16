@@ -4,22 +4,32 @@
         <div class="card-header">
             <div class="d-flex justify-content-between">
                 <strong class="aling-self-center">Información</strong>
+                <div class="text-end">
+                    <i class="fa fa-window-close" aria-hidden="true"></i>
+                </div>
             </div>
         </div>
         <div class="card-body p-4">
             <div class="row">
-                <div class="col-lg-3 col-sm-2">
-                    <label for="inputState" class="form-label text-dark">Nivel</label>
-                    <input type="text" class="form-control" placeholder="Nivel" formControlName="name">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <label for="inputState" class="form-label text-dark">Nombre de tarea</label>
+                    <input type="text" class="form-control" placeholder="Nombre de tarea" formControlName="name">
                 </div>
-                <div class="col-lg-3 col-sm-2">
-                    <label for="inputState" class="form-label text-dark">Valor Minimo</label>
-                    <input type="number" class="form-control" placeholder="valor" formControlName="minTacoins">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <label for="inputState" class="form-label text-dark">informacion de tarea</label>
+                    <input type="text" class="form-control" placeholder="informacion de tarea" formControlName="minTacoins">
                 </div>
-                <div class="col-lg-3 col-sm-2">
-                    <label for="inputState" class="form-label text-dark">Valor Maximo</label>
-                    <input type="number" class="form-control" placeholder="valor" formControlName="maxTacoins">
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <label for="inputState" class="form-label text-dark">Hora a iniciar</label>
+                    <input type="date" class="form-control" placeholder="Hora a iniciar" formControlName="maxTacoins">
                 </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <label for="inputState" class="form-label text-dark">Hora de entrega</label>
+                    <input type="date" class="form-control" placeholder="Hora de entrega" formControlName="maxTacoins">
+                </div>
+            </div>
+            <div class="d-grid gap-2 mt-5">
+                <button class="btn btn-secondary">Guardar</button>
             </div>
         </div>
     </div>

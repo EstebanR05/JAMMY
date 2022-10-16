@@ -22,7 +22,7 @@
             <td></td>
             <td></td>
             <td>
-              <button class="btn btn-secondary btn-sm">Editar</button>
+              <button class="btn btn-secondary btn-sm" (click)="openModal($event)">Editar</button>
             </td>
           </tr>
         </tbody>
@@ -44,9 +44,8 @@
       <div class="modal-dialog modal-lg modal-sm" role="document">
           <div class="modal-content">
               <div class="modal-body p-0">
-                  <app-profile-modal *ngIf="selected$ | async as selected;"
+                  <app-profile-modal *ngIf="selected$ | async as selected;" [modal]="selected"
                       (closeLevel)="closeModal()" (clickOutside)="closeModal()">
-                      <!-- [modal]="selected" -->
                   </app-profile-modal>
               </div>
           </div>
