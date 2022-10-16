@@ -13,7 +13,7 @@ $conexionBD = new mysqli($servidor, $usuario, $contrasenia, $nombreBaseDatos);
 // Consulta datos y recepciona una clave para consultar dichos datos con dicha clave
 if (isset($_GET["consultar"])){
     $data = json_decode(file_get_contents("php://input"));
-    $correo = $data->correo;
+    $nombre = $data->correo;
     $contrasena = $data->contrasena;
     $sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM usuarios WHERE correo='$correo' AND contrasena='$contrasena'");
     if(mysqli_num_rows($sqlEmpleaados) > 0){
@@ -25,7 +25,7 @@ if (isset($_GET["consultar"])){
 }
 //borrar pero se le debe de enviar una clave ( para borrado )
 if (isset($_GET["borrar"])){
-    $sqlEmpleaados = mysqli_query($conexionBD,"DELETE FROM usuarios WHERE user_id=".$_GET["borrar"]);
+    $sqlEmpleaados = mysqli_query($conexionBD,"DELETE FROM tareas WHERE tareas_id=".$_GET["borrar"]);
     if($sqlEmpleaados){
         echo json_encode(["success"=>1]);
         exit();
@@ -36,15 +36,12 @@ if (isset($_GET["borrar"])){
 if(isset($_GET["insertar"])){
     $data = json_decode(file_get_contents("php://input"));
     $nombre=$data->nombre;
-    $apellido=$data->apellido;
-    $correo=$data->correo;
-    $contrasena=$data->contrasena;
-    $colegio=$data->colegio;
-    $telefono=$data->telefono;
-    $edad=$data->edad;
-        if(($correo!="")&&($nombre!="")){
+    $info=$data->info;
+    $f_inicial=$data->f_inicial;
+    $f_final=$data->f_final;
+        if(($info!="")&&($nombre!="")){
             
-    $sqlEmpleaados = mysqli_query($conexionBD,"INSERT INTO usuarios(nombre,correo,apellido,contrasena,colegio,telefono,edad) VALUES ('$nombre','$correo','$apellido','$contrasena','$colegio','$telefono','$edad'); ");
+    $sqlEmpleaados = mysqli_query($conexionBD,"INSERT INTO tareas(nombre,info,f_inicial,f_final) VALUES('$nombre','$info','$f_inicial','$f_final') ");
     echo json_encode(["success"=>1]);
         }
     exit();
@@ -56,16 +53,16 @@ if(isset($_GET["actualizar"])){
 
     $id=(isset($data->id))?$data->id:$_GET["actualizar"];
     $nombre=$data->nombre;
-    $apellido=$data->apellido;
-    $correo=$data->correo;
-    $contrasena=$data->contrasena;
+    $info=$data->info;
+    $f_inicial=$data->f_inicial;
+    $f_final=$data->f_final;
     
-    $sqlEmpleaados = mysqli_query($conexionBD,"UPDATE usuarios SET nombre='$nombre',correo='$correo', apellido='$apellido', contraseña='$contrasena' WHERE id='$id'");
+    $sqlEmpleaados = mysqli_query($conexionBD,"UPDATE tareas SET nombre='$nombre',info='$info', f_inicial='$f_incial', f_final='$f_final' WHERE tareas_id='$id'");
     echo json_encode(["success"=>1]);
     exit();
 }
 // Consulta todos los registros de la tabla empleados
-$sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM usuarios ");
+$sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM tareas ");
 if(mysqli_num_rows($sqlEmpleaados) > 0){
     $empleaados = mysqli_fetch_all($sqlEmpleaados,MYSQLI_ASSOC);
     echo json_encode($empleaados);

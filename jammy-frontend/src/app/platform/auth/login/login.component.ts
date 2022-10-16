@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   submit() {
     this.servicio.VerificarUsuario(this.formUsuario.value).subscribe((resp) => {
-      this.sendValueIntoService(resp[0].id);
+      this.sendValueIntoService(resp[0].user_id);
       this.router.navigateByUrl('auth/profile');
     })
   }

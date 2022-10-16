@@ -4,4 +4,7 @@ export interface APIJammy {
     correo: string;
     apellido: string;
     contrasena: string;
+    colegio: string;
+    telefono: string;
+    edad: string;
 }

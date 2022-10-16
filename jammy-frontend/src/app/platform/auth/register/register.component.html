@@ -30,6 +30,24 @@
                     type="email" />
                   <input class="form-control mt-2" name="password" formControlName="contrasena"
                     placeholder="Contraseña" type="password" />
+                    <input class="form-control mt-2" name="edad" formControlName="edad"
+                    placeholder="Edad" type="number" />
+                    <div class="row">
+                      <div class="col-xs-6 col-md-6">
+                        <select class="form-control mt-2" name="colegio" formControlName="colegio">
+                          <option value="" hidden selected>Colegio</option>
+                          <option value="I.E.M.M.M">
+                            I.E.M.M.M
+                          </option>
+                          <option value="Otro...">
+                           Otro...
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-xs-6 col-md-6">
+                        <input type="number" name="telefono" class="form-control mt-2" placeholder="Telefono" formControlName="telefono" /> 
+                      </div>
+                    </div>
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="submit" [disabled]="formUsuarios.invalid" class="btn btn-primary btn-lg"
                       style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrarse</button>

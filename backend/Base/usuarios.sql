@@ -4,7 +4,7 @@ SET time_zone = "+00:00";
 
 
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
   `correo` varchar(255) NOT NULL,
   `apellido` varchar(255) NOT NULL,
@@ -15,13 +15,33 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `apellido`, `contrasena`, `colegio`, `telefono`, `edad`) VALUES
+INSERT INTO `usuarios` (`user_id`, `nombre`, `correo`, `apellido`, `contrasena`, `colegio`, `telefono`, `edad`) VALUES
 (1, 'Steiner', 'pruebadesteiner@gmail.com', 'Herrera', 'mosquera', 'I.E.M.M.M', '3020293030', '15');
 
 
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`user_id`);
 
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+
+CREATE TABLE `tareas` (
+  `tareas_id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `info` varchar(255) NOT NULL,
+  `f_inicial` varchar(255) NOT NULL,
+  `f_final` varchar(255) NOT NULL,
+  FOREIGN KEY (`tareas_id`) REFERENCES `usuarios`(`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `tareas` (`tareas_id`, `nombre`,`info`,`f_inicial`,`f_final`) VALUES (1, 'Matematicas', 'Buscar como encontrar la hipotenusa', '15/10/2022', '17/10/2022');
+
+ALTER TABLE `tareas`
+  ADD PRIMARY KEY (`tareas_id`);
+
+ALTER TABLE `tareas`
+  MODIFY `tareas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
 COMMIT;
