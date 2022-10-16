@@ -1,7 +1,6 @@
-import { Component, NgIterable, OnInit } from '@angular/core';
-import { map, Observable, switchMap, tap } from 'rxjs';
-import { APIJammy } from 'src/app/shared/interfaces/APIJammy';
-import { UserService, UserServiceActionTap } from 'src/app/shared/services/user.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-profile-list',
@@ -12,15 +11,22 @@ export class ProfileListComponent implements OnInit {
   public datos: any;
 
   constructor(
-    public _userSerice: UserService,
+    private _userSerice: UserService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    
-    //aqui traigo los datos del servicio y lo almaceno en la variable datos
-    this._userSerice.getAll().subscribe(res => {
-       this.datos = res[0];
-    })
+    var ID = parseInt(this._userSerice.valorID);
+
+    if (isNaN(ID)) {
+      alert('No has iniciado sesion, vuelve al login para hacerlo');
+      this.router.navigateByUrl('auth/login');
+    } else {
+          //aqui traigo los datos del servicio y lo almaceno en la variable datos
+      this._userSerice.getAll().subscribe(res => {
+      this.datos = res[ID - 1];
+      })
+    }
   }
 
 }

@@ -8,8 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
   ApiUrl:string = 'http://localhost/usuarios/api.php';
-
-  
   constructor( private HttpUsuarios:HttpClient) {
 
    }
@@ -22,4 +20,5 @@ export class LoginService {
    VerificarUsuario(datosUser: LoginInterface):Observable<any> {
     return this.HttpUsuarios.post<LoginInterface>(`${this.ApiUrl}?consultar=1`, datosUser);
    }
+
 }

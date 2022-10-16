@@ -10,6 +10,12 @@ export const UserServiceActionTap: Subject<any> = new Subject<any>();
 })
 export class UserService {
 
+  valorID!: string;
+
+  public setID(id:string) {
+    this.valorID = id;
+  }
+
   ApiUrl: string = 'http://localhost/usuarios/api.php';
 
   constructor(
