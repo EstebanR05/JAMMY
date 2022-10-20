@@ -35,6 +35,8 @@ export class ProfileCardComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  delete(){}
+  delete(id: string){
+    console.log(id)
+  }
 
 }
