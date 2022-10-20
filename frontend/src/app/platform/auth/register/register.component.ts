@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   formUsuarios!: FormGroup;
+  file!: File;
 
   constructor(
     public form: FormBuilder,
@@ -35,4 +36,13 @@ export class RegisterComponent implements OnInit {
       this.router.navigateByUrl('auth/login');
     })
   }
+
+  upload(imageName:any, event:any) {
+    if (event.target.files.length) {
+      this.file = event.target.files[0];
+      imageName.value = event.target.value;
+      // this.form.controls.image.setValue(event.target.value)
+    }
+  }
+
 }

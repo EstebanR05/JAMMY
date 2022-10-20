@@ -48,6 +48,21 @@
                         <input type="number" name="telefono" class="form-control mt-2" placeholder="Telefono" formControlName="telefono" /> 
                       </div>
                     </div>
+                    <div class="row">
+                      <div class="col-lg-12 col-sm-12">
+                        <label for="inputState" class="form-label text-white">Foto de perfil</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button (click)="$event.preventDefault();image.click()" class="btn btn-secondary btn-sm"
+                                    type="button">Subir</button>
+                            </div>
+                            <input #imageName formControlName="image" readonly class="form-control form-control-sm"
+                                type="text" placeholder="No hay archivo">
+                            <input #image style="display: none;" (change)="upload(imageName, $event)" type="file"
+                                placeholder="No hay archivo">
+                        </div>
+                      </div>
+                    </div>
                   <div class="text-center text-lg-start mt-4 pt-2">
                     <button type="submit" [disabled]="formUsuarios.invalid" class="btn btn-primary btn-lg"
                       style="padding-left: 2.5rem; padding-right: 2.5rem;">Registrarse</button>
