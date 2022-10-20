@@ -10,7 +10,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class ProfileCardComponent implements OnInit {
   tarea:any;
   id:any;
-  constructor(public _userService: UserService) { }
+  constructor(private _userService: UserService) { }
 
   ngOnInit(): void {
     this._userService.tareas().subscribe(respuesta => {
@@ -35,8 +35,12 @@ export class ProfileCardComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  delete(id: string){
-    console.log(id)
+  borrar(id: any, iControl: any){
+    if (window.confirm("¿Deseas eliminar realmente esta tarea?")) {
+      this._userService.BorrarTarea(id).subscribe(() => {
+        this.tarea.splice(iControl,1);
+      });
+    }
   }
 
 }
