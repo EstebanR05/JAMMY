@@ -17,10 +17,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of tarea">
-          <td>{{item.NombreTarea}}</td>
-          <td>{{item.informacionTarea}}</td>
-          <td>{{item.fechaInicial}}</td>
-          <td>{{item.fechaFinal}}</td>
+          <td>{{item.nombre}}</td>
+          <td>{{item.info}}</td>
+          <td>{{item.f_inicial}}</td>
+          <td>{{item.f_final}}</td>
           <td>
             <button class="btn btn-danger btn-sm" (click)="delete()">Eliminar</button>
           </td>

@@ -12,10 +12,7 @@ $conexionBD = new mysqli($servidor, $usuario, $contrasenia, $nombreBaseDatos);
 
 // Consulta datos y recepciona una clave para consultar dichos datos con dicha clave
 if (isset($_GET["consultar"])){
-    $data = json_decode(file_get_contents("php://input"));
-    $nombre = $data->correo;
-    $contrasena = $data->contrasena;
-    $sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM usuarios WHERE correo='$correo' AND contrasena='$contrasena'");
+    $sqlEmpleaados = mysqli_query($conexionBD,"SELECT * FROM tareas WHERE id_user=".$_GET["consultar"]);
     if(mysqli_num_rows($sqlEmpleaados) > 0){
         $empleaados = mysqli_fetch_all($sqlEmpleaados,MYSQLI_ASSOC);
         echo json_encode($empleaados);
@@ -39,9 +36,10 @@ if(isset($_GET["insertar"])){
     $info=$data->info;
     $f_inicial=$data->f_inicial;
     $f_final=$data->f_final;
-        if(($info!="")&&($nombre!="")){
+    $id= $data->id;
+    if(($id!="")&&($nombre!="")){
             
-    $sqlEmpleaados = mysqli_query($conexionBD,"INSERT INTO tareas(nombre,info,f_inicial,f_final) VALUES('$nombre','$info','$f_inicial','$f_final') ");
+    $sqlEmpleaados = mysqli_query($conexionBD,"INSERT INTO tareas(nombre,info,f_inicial,f_final,id_user) VALUES('$nombre','$info','$f_inicial','$f_final', '$id') ");
     echo json_encode(["success"=>1]);
         }
     exit();

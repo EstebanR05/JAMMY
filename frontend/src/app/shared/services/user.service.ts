@@ -18,11 +18,17 @@ export class UserService {
 
   ApiUrl: string = 'http://localhost/usuarios/api.php';
 
+  APItareas: string = 'http://localhost/tareas/tareas.php';
+
   constructor(
     private HttpUsuarios: HttpClient
   ) { }
 
   getAll():Observable<any> {
     return this.HttpUsuarios.get<APIJammy>(this.ApiUrl);
+  }
+
+  tareas() {
+    return this.HttpUsuarios.get(this.APItareas+'?consultar='+this.valorID);
   }
 }

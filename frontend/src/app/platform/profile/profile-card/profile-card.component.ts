@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-profile-card',
@@ -7,19 +8,13 @@ import { BehaviorSubject, Subscription } from 'rxjs';
   styleUrls: ['./profile-card.component.scss']
 })
 export class ProfileCardComponent implements OnInit {
-
-  tarea = [
-    {
-      NombreTarea: 'la segunda guerra mundial',
-      informacionTarea: 'buscar sus causas',
-      fechaInicial: '10-10-22',
-      fechaFinal: '25-10-22'
-    }
-  ]; 
-
-  constructor() { }
+  tarea:any;
+  constructor(public _userService: UserService) { }
 
   ngOnInit(): void {
+    this._userService.tareas().subscribe(respuesta => {
+      this.tarea = respuesta;
+    })
   }
 
   //modal
