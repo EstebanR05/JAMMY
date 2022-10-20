@@ -37,7 +37,7 @@ export class UserService {
     return this.HttpUsuarios.post<APItareas>(this.APItareas+'?insertar=1', datos);
   }
 
-  BorrarTarea(id: string) {
-    return this.HttpUsuarios.get(this.APItareas + '?borrar='+id)
+  BorrarTarea(id: any) {
+    return this.HttpUsuarios.get(this.APItareas + '?borrar='+ id);
   }
 }
