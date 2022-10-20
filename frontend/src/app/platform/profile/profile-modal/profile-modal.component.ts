@@ -1,3 +1,4 @@
+import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -13,7 +14,7 @@ export class ProfileModalComponent implements OnInit {
   form!: FormGroup;
 
   @Input() modal: any;
-  @Output() data: EventEmitter<any> = new EventEmitter<any>();
+  @Output() closeModal: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private _form: FormBuilder,
@@ -32,7 +33,7 @@ export class ProfileModalComponent implements OnInit {
 
   submit() {
     this._UserService.AgregarTarea(this.form.value).subscribe(() => {
-      return this.modal;
+       this.closeModal.emit();
     })
   }
 
