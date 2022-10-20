@@ -24,11 +24,16 @@ export class ProfileModalComponent implements OnInit {
     this.form = this._form.group({
       nombre: ['', [Validators.required]],
       info:['', [Validators.required]],
-      hinicial:['', [Validators.required]],
-      hentrega:['', [Validators.required]]
+      f_inicial:['', [Validators.required]],
+      f_final:['', [Validators.required]],
+      id: [this._UserService.valorID]
     });
   }
 
-  submit() { }
+  submit() {
+    this._UserService.AgregarTarea(this.form.value).subscribe(() => {
+      return this.modal;
+    })
+  }
 
 }

@@ -34,7 +34,7 @@ export class UserService {
   }
 
   AgregarTarea(datos: APItareas) {
-    return this.HttpUsuarios.post<APItareas>(this.APItareas+'insertar=1', datos);
+    return this.HttpUsuarios.post<APItareas>(this.APItareas+'?insertar=1', datos);
   }
 
   BorrarTarea(id: string) {

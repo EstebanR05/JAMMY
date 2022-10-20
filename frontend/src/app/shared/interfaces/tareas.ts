@@ -4,5 +4,5 @@ export interface APItareas {
     info: string;
     f_inicial: string;
     f_final: string;
-    user_id: string;
+    id_user: string;
 }
