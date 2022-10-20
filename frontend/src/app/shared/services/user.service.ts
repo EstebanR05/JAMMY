@@ -11,10 +11,11 @@ export const UserServiceActionTap: Subject<any> = new Subject<any>();
 })
 export class UserService {
 
-  valorID!: string;
+  valorID: any;
 
   public setID(id:string) {
-    this.valorID = id;
+    localStorage.setItem("ID", id);
+    this.valorID = localStorage.getItem("ID")
   }
 
   ApiUrl: string = 'http://localhost/usuarios/api.php';
@@ -40,4 +41,5 @@ export class UserService {
   BorrarTarea(id: any) {
     return this.HttpUsuarios.get(this.APItareas + '?borrar='+ id);
   }
+
 }

@@ -17,7 +17,6 @@ export class ProfileListComponent implements OnInit {
 
   ngOnInit(): void {
     var ID = parseInt(this._userSerice.valorID);
-
     if (isNaN(ID)) {
       alert('No has iniciado sesion, vuelve al login para hacerlo');
       this.router.navigateByUrl('auth/login');
