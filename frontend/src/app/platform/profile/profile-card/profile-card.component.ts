@@ -9,6 +9,7 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class ProfileCardComponent implements OnInit {
   tarea:any;
+  id:any;
   constructor(public _userService: UserService) { }
 
   ngOnInit(): void {
@@ -22,7 +23,9 @@ export class ProfileCardComponent implements OnInit {
   modalDisplay$: BehaviorSubject<any> = new BehaviorSubject<any>("none");
   subscription!: Subscription;
 
-  openModal() {
+  
+  openModal(e:any) {
+    this.selected$.next({e})
     this.modalDisplay$.next("block");
   }
 
