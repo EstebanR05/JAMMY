@@ -35,9 +35,10 @@ export class ProfileCardComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  borrar(id: any){
+  borrar(id: any, iControl: any){
     if (window.confirm("¿Deseas eliminar realmente esta tarea?")) {
       this._userService.BorrarTarea(id).subscribe(() => {
+        this.tarea.splice(iControl,1);
       });
     }
   }
