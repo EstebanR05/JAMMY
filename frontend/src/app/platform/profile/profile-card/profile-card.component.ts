@@ -8,6 +8,15 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 })
 export class ProfileCardComponent implements OnInit {
 
+  tarea = [
+    {
+      NombreTarea: 'la segunda guerra mundial',
+      informacionTarea: 'buscar sus causas',
+      fechaInicial: '10-10-22',
+      fechaFinal: '25-10-22'
+    }
+  ]; 
+
   constructor() { }
 
   ngOnInit(): void {
@@ -18,8 +27,7 @@ export class ProfileCardComponent implements OnInit {
   modalDisplay$: BehaviorSubject<any> = new BehaviorSubject<any>("none");
   subscription!: Subscription;
 
-  openModal(id:any) {
-    this.selected$.next({ id });
+  openModal() {
     this.modalDisplay$.next("block");
   }
 
@@ -28,5 +36,7 @@ export class ProfileCardComponent implements OnInit {
     this.modalDisplay$.next("none");
     this.subscription.unsubscribe();
   }
+
+  delete(){}
 
 }

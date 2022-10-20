@@ -16,13 +16,13 @@
         <tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let item of tarea">
+          <td>{{item.NombreTarea}}</td>
+          <td>{{item.informacionTarea}}</td>
+          <td>{{item.fechaInicial}}</td>
+          <td>{{item.fechaFinal}}</td>
           <td>
-            <button class="btn btn-secondary btn-sm" (click)="openModal($event)">Editar</button>
+            <button class="btn btn-danger btn-sm" (click)="delete()">Eliminar</button>
           </td>
         </tr>
       </tbody>
@@ -33,7 +33,7 @@
 <div class="card mt-4">
   <div class="card-body">
     <div class="d-grid gap-2">
-      <button class="btn btn-secondary" (click)="openModal($event)">Agregar nueva tarea</button>
+      <button class="btn btn-secondary" (click)="openModal()">Agregar nueva tarea</button>
     </div>
   </div>
 </div>
