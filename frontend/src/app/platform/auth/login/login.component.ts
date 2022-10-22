@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/shared/services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/shared/services/user.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private servicio: LoginService,
     private form: FormBuilder,
     private router: Router,
-    private _userService: UserService) { }
+    private _cookieService: CookieService ) { }
 
   ngOnInit(): void {
     this.formUsuario = this.form.group({
@@ -27,13 +27,10 @@ export class LoginComponent implements OnInit {
 
   }
 
-  sendValueIntoService(value: string) {
-      this._userService.setID(value)
-  }
 
   submit() {
     this.servicio.VerificarUsuario(this.formUsuario.value).subscribe((resp) => {
-      this.sendValueIntoService(resp[0].user_id);
+      this._cookieService.set('ID', resp[0].user_id);
       this.router.navigateByUrl('auth/profile');
     })
   }

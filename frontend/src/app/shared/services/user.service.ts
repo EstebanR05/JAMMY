@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { APIJammy } from '../interfaces/APIJammy';
 import { APItareas } from '../interfaces/tareas';
+import { CookieService } from 'ngx-cookie-service';
 
 export const UserServiceActionTap: Subject<any> = new Subject<any>(); 
 
@@ -11,19 +12,15 @@ export const UserServiceActionTap: Subject<any> = new Subject<any>();
 })
 export class UserService {
 
-  valorID: any;
-
-  public setID(id:string) {
-    localStorage.setItem("ID", id);
-    this.valorID = localStorage.getItem("ID")
-  }
+  valorID: any = this._cookieService.get('ID');
 
   ApiUrl: string = 'http://localhost/usuarios/api.php';
 
   APItareas: string = 'http://localhost/tareas/tareas.php';
 
   constructor(
-    private HttpUsuarios: HttpClient
+    private HttpUsuarios: HttpClient,
+    private _cookieService: CookieService
   ) { }
 
   getAll():Observable<any> {

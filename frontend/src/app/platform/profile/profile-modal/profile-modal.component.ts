@@ -1,6 +1,7 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -34,6 +35,7 @@ export class ProfileModalComponent implements OnInit {
   submit() {
     this._UserService.AgregarTarea(this.form.value).subscribe(() => {
        this.closeModal.emit();
+       window.location.reload();
     })
   }
 
