@@ -12,12 +12,12 @@ CREATE TABLE `usuarios` (
   `colegio` varchar(255) NOT NULL,
   `telefono` varchar(255) NOT NULL,
   `edad` varchar(255) NOT NULL,
-  
+  `imagen` varchar(255) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-INSERT INTO `usuarios` (`user_id`, `nombre`, `correo`, `apellido`, `contrasena`, `colegio`, `telefono`, `edad`) VALUES
-(1, 'Steiner', 'pruebadesteiner@gmail.com', 'Herrera', 'mosquera', 'I.E.M.M.M', '3020293030', '15');
+INSERT INTO `usuarios` (`user_id`, `nombre`, `correo`, `apellido`, `contrasena`, `colegio`, `telefono`, `edad`, `imagen`) VALUES
+(1, 'Steiner', 'pruebadesteiner@gmail.com', 'Herrera', 'mosquera', 'I.E.M.M.M', '3020293030', '15', 'user_default.png');
 
 
 ALTER TABLE `usuarios`

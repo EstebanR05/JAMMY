@@ -39,4 +39,8 @@ export class UserService {
     return this.HttpUsuarios.get(this.APItareas + '?borrar='+ id);
   }
 
+  EnviarImagen(file: any):Observable<any> {
+    return this.HttpUsuarios.post(this.ApiUrl + "?image=1", file);
+  }
+
 }
