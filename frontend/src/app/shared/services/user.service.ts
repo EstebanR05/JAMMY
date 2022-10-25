@@ -14,9 +14,9 @@ export class UserService {
 
   valorID: any = this._cookieService.get('ID');
 
-  ApiUrl: string = 'http://localhost/usuarios/api.php';
+  ApiUrl: string = 'http://localhost/JAMMY/backend/PHP/usuarios/api.php';
 
-  APItareas: string = 'http://localhost/tareas/tareas.php';
+  APItareas: string = 'http://localhost/JAMMY/backend/PHP/tareas/tareas.php';
 
   constructor(
     private HttpUsuarios: HttpClient,

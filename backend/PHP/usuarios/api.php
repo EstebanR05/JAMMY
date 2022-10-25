@@ -21,7 +21,7 @@ if (isset($_GET["image"])) {
     $ext = pathinfo($ori_fname, PATHINFO_EXTENSION);
 
     //target folder
-    $target_path2 = "JAMMY/frontend/src/assets/subidas/";
+    $target_path2 = "../../../frontend/src/assets/subidas/";
 
     $name = $_FILES['file']['name'];
     //set target file path
