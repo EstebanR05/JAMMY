@@ -4,9 +4,19 @@
   <div class="border-right p-2" id="sidebar">
     <div class="img-big">
       <img class="rounded-circle img-1" [src]="imagen">
+      <div class="col-lg-4 col-sm-4">
+        <div class="input-group d-flex justify-content-center">
+            <div class="input-group-prepend">
+                <button  (click)="$event.preventDefault();image.click()" class="btn btn-secondary btn-sm d-flex justify-content-center "
+                    type="button">Subir</button>
+            </div>
+            <input #image style="display: none;" (change)="upload($event)" type="file"
+                placeholder="No hay archivo" name="imagen">
+        </div>
+      </div>
     </div>
     <h3 class="text-light p-2 text-center mt-2">
-      Perfil de {{ datos.nombre + " " + datos.apellido}}
+      {{ datos.nombre + " " + datos.apellido}}
     </h3>
 
     <hr class="text-white" />
@@ -25,24 +35,8 @@
   <!--section-->
   <div class="container p-0" id="colorPrincipl">
     <div class="p-2" id="colorHeader">
-      <div class="row">
-        <div class="col-lg-4 col-sm-4 position-absolute">
-          <label for="inputState" class="form-label text-white">Foto de perfil</label>
-          <div class="input-group">
-              <div class="input-group-prepend">
-                  <button (click)="$event.preventDefault();image.click()" class="btn btn-secondary btn-sm"
-                      type="button">Subir</button>
-              </div>
-              <input #imageName readonly class="form-control form-control-sm"
-                  type="text" placeholder="No hay archivo">
-              <input #image style="display: none;" (change)="upload(imageName, $event)" type="file"
-                  placeholder="No hay archivo" name="imagen">
-          </div>
-        </div>
-      </div>
       <div class="mt-2 text-end">
         <img [src]="imagen" class="rounded-circle" width="40px" height="40px">
-        <div class="text-white"> {{datos.nombre}}</div>
       </div>
     </div>
     <div class="p-5" id="colorPrincipl">
