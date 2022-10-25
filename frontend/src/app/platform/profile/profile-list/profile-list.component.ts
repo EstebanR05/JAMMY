@@ -33,9 +33,8 @@ export class ProfileListComponent implements OnInit {
 
   }
 
-  upload(imageName:any, event:any) {
+  upload(event:any) {
     const fileList: FileList = event.target.files;
-    imageName.value = event.target.files[0].name;
     //check whether file is selected or not
     if (fileList.length > 0) {
 
