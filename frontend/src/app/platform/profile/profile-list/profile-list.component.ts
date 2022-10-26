@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class ProfileListComponent implements OnInit {
 
   constructor(
     private _userSerice: UserService,
-    private router: Router
+    private router: Router,
+    private _cookieService: CookieService
   ) { }
 
   ngOnInit(): void {
@@ -51,7 +53,7 @@ export class ProfileListComponent implements OnInit {
           this.submit();
           window.location.reload();
         }
-    
+
   }
 
 }
@@ -60,6 +62,13 @@ submit() {
     this._userSerice.EnviarImagen(this.file_data).subscribe((res) => {
       console.log(res);
     });
+  }
+}
+
+leave() {
+  if(this._cookieService.check('ID')) {
+    this._cookieService.delete('ID','/auth', 'localhost');
+    this.router.navigateByUrl('auth/login');
   }
 }
 
