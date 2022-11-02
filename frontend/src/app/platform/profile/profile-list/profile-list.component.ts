@@ -21,6 +21,7 @@ export class ProfileListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    //mantiene los datos del usuario
     var ID = parseInt(this._userSerice.valorID);
     if (isNaN(ID)) {
       alert('No has iniciado sesion, vuelve al login para hacerlo');
@@ -35,15 +36,12 @@ export class ProfileListComponent implements OnInit {
 
   }
 
+  //hace que se vea la imagen en tiempo real y complementa el submit
   upload(event:any) {
     const fileList: FileList = event.target.files;
-    //check whether file is selected or not
     if (fileList.length > 0) {
-
         const file = fileList[0];
-        //get file information such as name, size and type
         console.log('finfo',file.name,file.size,file.type);
-        //max file size is 4 mb
         if((file.size/1048576)<=4)
         {
           let formData = new FormData();
@@ -53,10 +51,10 @@ export class ProfileListComponent implements OnInit {
           this.submit();
           window.location.reload();
         }
-
   }
 
 }
+//subir imagen
 submit() {
   if (this.file_data != '') {
     this._userSerice.EnviarImagen(this.file_data).subscribe((res) => {
@@ -65,6 +63,7 @@ submit() {
   }
 }
 
+//poder cerrar sesion sin guardar los datos del usuario
 leave() {
   if(this._cookieService.check('ID')) {
     this._cookieService.delete('ID','/auth', 'localhost');
@@ -72,6 +71,7 @@ leave() {
   }
 }
 
+//para que el sidebar que se oculte
 ocultar() {
   var menu = document.getElementsByClassName('sidebar');
 

@@ -23,18 +23,20 @@ export class ProfileCardComponent implements OnInit {
   modalDisplay$: BehaviorSubject<any> = new BehaviorSubject<any>("none");
   subscription!: Subscription;
 
-  
+  //abre la pantalla emergente para guardar las tareas
   openModal(e:any) {
     this.selected$.next({e})
     this.modalDisplay$.next("block");
   }
 
+  //se encarga de cerrar la pantalla emergente donde agregamos las tareas
   closeModal() {
     this.selected$.next(null);
     this.modalDisplay$.next("none");
     this.subscription.unsubscribe();
   }
 
+  //borra tareas de la base de datos
   borrar(id: any, iControl: any){
     if (window.confirm("¿Deseas eliminar realmente esta tarea?")) {
       this._userService.BorrarTarea(id).subscribe(() => {

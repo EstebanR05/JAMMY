@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     private _cookieService: CookieService ) { }
 
   ngOnInit(): void {
+    //hacer que los formularios validen si hay informacion
     this.formUsuario = this.form.group({
       correo: ['', [Validators.required, Validators.email]],
       contrasena: ['', [Validators.required]]
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-
+//subir archivos
   submit() {
     this.servicio.VerificarUsuario(this.formUsuario.value).subscribe((resp) => {
       this._cookieService.set('ID', resp[0].user_id);
