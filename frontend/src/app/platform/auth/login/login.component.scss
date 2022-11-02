@@ -38,3 +38,14 @@
   .paginabg {
       background-color: #091D42 !important;
   }
+
+
+  @media (max-width: 990px) {
+    .responsive {
+      height: 100vh;
+    }
+  }
+
+  body {
+    background-color: #27275f !important;
+  }

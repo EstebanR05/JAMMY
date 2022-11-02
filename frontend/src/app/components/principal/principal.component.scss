@@ -1,3 +1,75 @@
+.button {
+  display: none;
+}
+
+.navbar-nav {
+  position: fixed;
+  top: 30px;
+  right: 10px;
+}
+@media (max-width: 300px) {
+  .button {
+    display: block;
+    width: 100vw;
+  }
+  .desaparece {
+    display: none;
+  }
+
+  .nav-link {
+    color: black !important;
+    padding-left: 10px;
+  }
+
+  .nav-link:hover, .nav-link:active {
+    background-color: gray !important;
+    color: white !important;
+  }
+
+  .navbar-nav {
+    background-color: white;
+    position: absolute;
+    width: 100vw;
+    padding-left: 10px;
+    top: 70px;
+    border-radius: 10px;
+  }
+}
+
+
+@media (max-width: 992px) and (min-width: 300px) {
+  .button {
+    display: inline;
+    position: fixed;
+    top: 30px;
+    right: 10px;
+  }
+
+  .desaparece {
+    display: none;
+  }
+
+  .nav-link {
+    color: black !important;
+    padding-left: 10px;
+  }
+
+  .nav-link:hover, .nav-link:active {
+    background-color: gray !important;
+    color: white !important;
+  }
+
+  .navbar-nav {
+    background-color: white;
+    position: absolute;
+    width: 200px;
+    top: 70px;
+    right: 1px;
+    border-radius: 10px;
+  }
+
+}
+
 .bg-principal {
   background-color: #1D1D42 !important;
 }

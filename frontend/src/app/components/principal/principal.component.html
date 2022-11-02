@@ -1,20 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-principal" id="mainNav">
-  <div class="container">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#page-top">
       <i>
         <div class="h3">Ontrack Jammy</div>
       </i>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      Menu
-      <i class="fa fa-bars ms-1"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0 pl-4">
-        <li class="nav-item"><a class="nav-link bhover color-texto tamaño" href="#services">objetivo</a></li>
-        <li class="nav-item"><a class="nav-link bhover color-texto tamaño" href="#about">Grupo</a></li>
-      </ul>
+    <div class="input-group mb-3">
+        <button class="btn btn-light ms-auto button" (click)="ocultar()">
+            Menu
+            <i class="fa fa-bars ms-1"></i>
+          </button>
+          <div class="main_list" id="mainListDiv">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0 pl-4 desaparece ">
+              <li class="nav-item"><a class="nav-link tamaño desaparece" href="#services">objetivo</a></li>
+              <li class="nav-item"><a class="nav-link tamaño desaparece " href="#about">Grupo</a></li>
+            </ul>
+          </div>
     </div>
   </div>
 </nav>
@@ -145,3 +146,4 @@
     </div>
   </div>
 </footer>
+

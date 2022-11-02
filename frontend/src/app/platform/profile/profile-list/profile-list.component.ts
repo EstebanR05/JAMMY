@@ -72,4 +72,10 @@ leave() {
   }
 }
 
+ocultar() {
+  var menu = document.getElementsByClassName('sidebar');
+
+  menu[0].classList.toggle('desaparece');
+}
+
 }

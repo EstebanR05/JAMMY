@@ -33,3 +33,22 @@ li {
     padding-top: 7px;
     width: 200px;
 } 
+
+@media (max-width: 769px) {
+    .button {
+        display: inline;
+    }
+    .desaperece {
+        display: none;
+    }
+
+    .sidebar {
+        position: absolute;
+        display: none;
+    }
+}
+
+.button {
+    display: none;
+}
+

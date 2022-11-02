@@ -12,5 +12,14 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ocultar() {
+    var item = document.getElementsByClassName('nav-link');
+    var menu = document.getElementsByClassName('navbar-nav');
+
+    for (var i = 0; i < item.length; i++) {
+      item[i].classList.toggle('desaparece');
+    }
+    menu[0].classList.toggle('desaparece');
+  }
 }
 
