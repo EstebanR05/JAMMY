@@ -1,7 +1,7 @@
 <div class="d-flex bg-principal">
 
   <!--aside-->
-  <div class="border-right p-2" id="sidebar">
+  <div class="border-right p-2 desaparece sidebar" id="sidebar">
     <div class="img-big">
       <img class="rounded-circle img-1" [src]="imagen">
       <div class="col-lg-4 col-sm-4">
@@ -45,6 +45,10 @@
       </div>
     </div>
     <div class="p-5" id="colorPrincipl">
+      <button class="btn btn-light ms-auto button" (click)="ocultar()">
+        Menu
+        <i class="fa fa-bars ms-1"></i>
+      </button>
       <app-profile-card></app-profile-card>
     </div>
     <div class="p-4" id="colorPrincipl">
