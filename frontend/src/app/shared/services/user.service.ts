@@ -14,9 +14,9 @@ export class UserService {
 
   valorID: any = this._cookieService.get('ID');
 
-  ApiUrl: string = 'http://ema.puntodepagos.com/php/usuarios/api.php';
+  ApiUrl: string = 'https://ema.puntodepagos.com/php/usuarios/api.php';
 
-  APItareas: string = 'http://ema.puntodepagos.com/php/tareas/tareas.php';
+  APItareas: string = 'https://ema.puntodepagos.com/php/tareas/tareas.php';
 
   constructor(
     private HttpUsuarios: HttpClient,
