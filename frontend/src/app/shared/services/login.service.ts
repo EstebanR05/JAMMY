@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  ApiUrl:string = 'http://ema.puntodepagos.com/php/usuarios/api.php';
+  ApiUrl:string = 'https://ema.puntodepagos.com/php/usuarios/api.php';
   constructor( private HttpUsuarios:HttpClient) {
 
    }
