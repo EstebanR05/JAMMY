@@ -8,7 +8,10 @@ import { APIJammy } from "../interfaces/APIJammy";
 })
 export class RegisterService {
 
-  ApiUrl: string = 'https://ema.puntodepagos.com/php/usuarios/api.php';
+  //url usuarios xampp
+  ApiUrl: string = 'http://localhost/jammy/backend/PHP/usuarios/api.php';
+  //url usuarios servidor
+  // ApiUrl: string = 'https://ema.puntodepagos.com/php/usuarios/api.php';
 
   constructor(
     private HttpUsuarios: HttpClient
