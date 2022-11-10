@@ -32,12 +32,14 @@ export class RegisterComponent implements OnInit {
 
   submit():any{
 
-    this.CrudService.AgregarUsuario(this.formUsuarios.value).subscribe(() => {
-      this.router.navigateByUrl('auth/login');
+    this.CrudService.AgregarUsuario(this.formUsuarios.value).subscribe((res) => {
+      if(res){this.router.navigateByUrl('auth/login')};
     });
   }
   public file= new FormControl('');
-
+  getControl(control: string, form: FormGroup = this.formUsuarios): any {
+    return form.controls[control];
+  }
 
 
 }

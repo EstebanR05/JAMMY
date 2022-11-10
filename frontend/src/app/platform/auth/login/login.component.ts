@@ -28,6 +28,10 @@ export class LoginComponent implements OnInit {
 
   }
 
+  getControl(control: string, form: FormGroup = this.formUsuario): any {
+    return form.controls[control];
+  }
+
 //subir archivos
   submit() {
     this.servicio.VerificarUsuario(this.formUsuario.value).subscribe((resp) => {
